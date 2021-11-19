@@ -189,7 +189,7 @@ For resources that implement data encryption and allow the customer to specify t
 | customerManagedKeyEncryption.keyEncryptionKeyUrl  | Key vault uri to access the encryption key  |
 | customerManagedKeyEncryption.keyEncryptionKeyIdentity.identityType | String enum. Values are "userAssignedIdentity" or "systemAssignedIdentity"  |
 | customerManagedKeyEncryption.keyEncryptionKeyIdentity.userAssignedIdentity | The User Assigned resource id of the identity which will be used to access key vault  |
-| customerManagedKeyEncryption.keyEncryptionKeyIdentity.federatedIdentityClientId | The federated application client identity of the identity which will be used to access a key vault in another tenant  |
+| customerManagedKeyEncryption.keyEncryptionKeyIdentity.federatedIdentityClientId | The federated application client id of the identity which will be used to access a key vault in another tenant  |
 
 On PUT/PATCH of a new key, the provider is expected to implement key rotation for the encrypted data. 
 
