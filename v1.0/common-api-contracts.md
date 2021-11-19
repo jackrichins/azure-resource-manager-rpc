@@ -163,7 +163,7 @@ For resources that implement data encryption and allow the customer to specify t
                                 "defaultValue": "",
                                 "description": "user assigned identity to use for accessing key encryption key Url. Ex: /subscriptions/fa5fc227-a624-475e-b696-cdd604c735bc/resourceGroups/<resource group>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/myId. Mutually exclusive with identityType systemAssignedIdentity.”
                             },
-                            "federatedIdentityClientId": {
+                            "federatedClientId": {
                                 "type": "string",
                                 "defaultValue": "",
                                 "description": "application client identity to use for accessing key encryption key Url in a different tenant. Ex: f83c6b1b-4d34-47e4-bb34-9d83df58b540”
@@ -189,7 +189,7 @@ For resources that implement data encryption and allow the customer to specify t
 | customerManagedKeyEncryption.keyEncryptionKeyUrl  | Key vault uri to access the encryption key  |
 | customerManagedKeyEncryption.keyEncryptionKeyIdentity.identityType | String enum. Values are "userAssignedIdentity" or "systemAssignedIdentity"  |
 | customerManagedKeyEncryption.keyEncryptionKeyIdentity.userAssignedIdentity | The User Assigned resource id of the identity which will be used to access key vault  |
-| customerManagedKeyEncryption.keyEncryptionKeyIdentity.federatedIdentityClientId | The federated application client id of the identity which will be used to access a key vault in another tenant  |
+| customerManagedKeyEncryption.keyEncryptionKeyIdentity.federatedClientId | The federated application client id of the identity which will be used to access a key vault in another tenant  |
 
 On PUT/PATCH of a new key, the provider is expected to implement key rotation for the encrypted data. 
 
@@ -237,7 +237,7 @@ The following sample ARM requests depict the expected state changes and service 
             "keyEncryptionKeyIdentity": {
                 "identityType": "userAssignedIdentity",
                 "userAssignedIdentity": "UA resource id",
-                "federatedIdentityClientId": "Federated application id"
+                "federatedClientId": "Federated application id"
             },
             "keyEncryptionKeyUrl": "https://contosovault.vault.azure.net/keys/contosokek"
         }
